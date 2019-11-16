@@ -1,1 +1,113 @@
-<h1> Test Guys </h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="icon" type="image" href="data:image/png;base64,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" sizes="16x16">
+    <title>RiyanDev CODE</title>
+    <style>
+    	body{
+    		font-family: 'Montserrat', sans-serif;
+    		width: 100%;
+    		height: 100%;
+    	}
+    </style>
+  </head>
+  <body>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+			<div class="container">	
+			  <a class="navbar-brand" href="">RiyanDev <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcxX0DD2Kx514LylumauWBSauTKwIq4w7xMxGcRYdb0iJx7jb&s" class="img-fluid" width="45"></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			    <div class="navbar-nav ml-auto">
+			      <a class="nav-item nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
+			      <a class="nav-item nav-link active" href="#services" >Service</a>
+			      <a class="nav-item nav-link active" href="#contact">Contact</a>
+			    </div>
+			  </div>
+		  </div>
+		</nav>
+
+
+  	<div class="container mt-5">
+  		<div class="row mt-5">
+  			<div class="col-md-9">
+  				<section id="home">
+  					<h3 class="mb-4 mt-5"># <span class="border-bottom">Perkenalan</span></h3>
+  					<p class="ml-3"><span><i>Nama Saya Riyan Dari Surabaya Saya Sekarang Masih Berumur 17 thn Dan Saya Sekolah di SMK Negeri 1 Surabaya. Di sekolah saya mengambil jurusan RPL atau Rekaya Perangkat Lunak</i>, saya sendiri masih belajar tahapan untuk bisa mendapatkan goal saya. Dan saya ini bergabung di komuintas cyber security sejak smp sampai saat ini, tidak bosan dengan beberapa pengalaman yang saya dapatkan namun ada rasa putus asa saya juga aktif di bidang programming tidak hanya itu saya juga mengikuti event it yang ada di surabaya, rumah saya ada di sidoarjo tepatnya di sedati deket dengan <span class="border-bottom">bandara internasional juanda</span> monggo kalo mau mampir hehe contact aja . sekian perkenalan dari saya mohon maaf kalo ada kata <b>terimakasih</b>.</span></p>
+  				</section>
+  			</div>
+  			<div class="col-md-12 mt-5">
+  				<section id="services">
+  					<h3 class="mb-5 mt-2"># <span class="border-bottom">Services</span></h3>
+						<div class="row ml-3">
+							<div class="col mt-3 ml-5">
+								<div class="card shadow" style="width: 18rem;">
+								  <div class="card-body">
+								    <h5 class="card-title">Membuat Web Portofolio Atau Web Commersil</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    
+								  </div>
+								</div>
+							</div>
+
+							<div class="col-md mt-3 ml-5">
+								<div class="card shadow" style="width: 18rem;">
+								  <div class="card-body">
+								    <h5 class="card-title">Membuat Tools Tracking Orang Dengan Memanfaatkan GPS</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    
+								  </div>
+								</div>
+							</div>
+
+							<div class="col-md mt-3 ml-5">
+								<div class="card shadow" style="width: 18rem;">
+								  <div class="card-body">
+								    <h5 class="card-title">Belajar Web Developer FrontEnd Hingga BackEnd Bersama Saya</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    
+								  </div>
+								</div>
+							</div>
+
+						</div>
+  				</section>
+  			</div>
+  			<div class="col-md-12 mt-5 mb-5">	
+  				<section id="contact">	
+	  				<p><h3 class="mb-5"># <span class="border-bottom">Contact</span> </h3>
+	  					<div class="mt-3">	
+		  					<span class="ml-4 mr-5"><a href="https://wa.me/62089612954739"><i class="fab fa-whatsapp fa-4x text-success"></i></a></span>
+		  					<span class="mr-5"><a href="https://www.instagram.com/ryanfga_/"><i class="fab fa-instagram fa-4x text-danger"></i></a></span>
+		  					<span class="mr-5"><a href="https://www.facebook.com/mayong.mayong.7564"><i class="fab fa-facebook-square fa-4x text-primary"></i></a></span>
+		  					<span style="margin-right: -10px"><a href="https://www.youtube.com/channel/UC5mBwc9EFDSX9SJG2IcZcfQ"><i class="fab fa-youtube fa-4x text-danger"></i></a></span>
+	  					</div>
+	  				</p>
+  				</section>
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="row mt-5">
+  		<div class="col text-center text-white p-3" style="background-color: #000;">
+  			© 2019 RiyanDev CODE | All right reserved.
+  		</div>
+  	</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
