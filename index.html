@@ -1,117 +1,334 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="icon" type="image" href="data:image/png;base64,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" sizes="16x16">
-    <title>RiyanDev CODE</title>
-    <style>
-    	body{
-    		font-family: 'Montserrat', sans-serif;
-    		width: 100%;
-    		height: 100%;
-    	}
-    </style>
-  </head>
-  <body>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-			<div class="container">	
-			  <a class="navbar-brand" href="">RiyanDev <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcxX0DD2Kx514LylumauWBSauTKwIq4w7xMxGcRYdb0iJx7jb&s" class="img-fluid" width="45"></a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			    <div class="navbar-nav ml-auto">
-			      <a class="nav-item nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
-			      <a class="nav-item nav-link active" href="#services" >Service</a>
-			      <a class="nav-item nav-link active" href="#contact">Contact</a>
-			    </div>
-			  </div>
-		  </div>
-		</nav>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .typograf-1 {
+        opacity: 0;
+    }
+    
+    .img-project:hover .image {
+        opacity: 0.3;
+    }
+    
+    .img-project:hover .typograf-1 {
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <header>
+        <!-- Desktop Navigation -->
+        <nav class="absolute bg-tranparent w-full flex p-6 pr-48 items-center md:z-10" id="desk-nav">
+            <div class="w-1/2 md:w-1/6">
+                <div class="flex">
+                    <button class="md:hidden btn-humbergur pr-4" onclick="showMenu()">
+                        <img src="https://img.icons8.com/android/24/000000/menu.png">
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:block md w-full">
+                <ul class="flex justify-end">
+                    <li class="pr-8 text-gray-700 text-lg font-medium font-serif">
+                        <a href="#home" id="route" class="route active border-b-2 border-black">Home</a>
+                    </li>
+                    <li class="pr-8 text-gray-700 text-lg font-medium font-serif"><a href="#about" id="route" class="route">About</a></li>
+                    <li class="pr-8 text-gray-700 text-lg font-medium font-serif"><a href="#portfolio" id="route" class="route">Portfolio</a></li>
+                    <li class="pr-8 text-gray-700 text-lg font-medium font-serif"><a href="#contact" id="route" class="route">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <nav class="flex flex-col flex-wrap shadow-md bg-white w-full h-full fixed md:invisible" style="left: -410px;" id="side-nav">
+            <div class="flex flex-row py-4">
+                <button class="px-4 text-gray-600" onclick="hideMenu()">
+                    <img src="https://img.icons8.com/ios/50/000000/close-window.png" width="35px" />
+                </button>
+            </div>
+            <div class="w-full">
+                <ul class="flex items-center flex-col">
+                    <li class="mt-4x pl-4 py-4 text-gray-600"><a href="#home" onclick="hideMenu()">Home</a></li>
+                    <li class="pl-4 py-4 text-gray-600"><a href="#about" onclick="hideMenu()">About</a></li>
+                    <li class="pl-4 py-4 text-gray-600"><a href="#portfolio" onclick="hideMenu()">Portfolio</a></li>
+                    <li class="pl-4 py-4 text-gray-600"><a href="#contact" onclick="hideMenu()">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <!-- main -->
+    <main>
+        <section id="home">
+            <div class="container flex flex-wrap text-center md:text-left md:justify-around items-center h-screen bg-no-repeat bg-cover object-cover" style="background-image: url('https://nishanth2305.netlify.app/assets/img/hero.jpg');">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold uppercase">rian firgiawan.</h1>
+                    <h2 class="text-3xl mb-6 font-medium capitalize">Web Developer</h2>
+                    <div class="flex justify-center md:justify-start">
+                        <a class="font-sans py-3 px-8 mr-6 border-2 border-black bg-black hover:bg-transparent hover:text-black text-white">Hire Me</a>
+                        <a class="font-sans py-3 px-8 border-2 border-black hover:bg-black hover:text-white">Explore Me</a>
+                    </div>
+                </div>
+                <div class="hidden md:max-w-xs md:block md:mt-24">
+                    <img src="https://nishanth2305.netlify.app/assets/img/myslef.jpg" alt="" class="">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="text-center md:text-left" style="background-color: #e8e8e8;">
+            <div class="container h-full md:h-screen flex flex-col md:flex-row justify-center mx-auto my-auto items-center ">
+                <div class="md:w-2/5 w-full px-4 mx-auto h-full">
+                    <h1 class="text-4xl my-8 font-bold">About</h1>
+                    <div class="mt-16">
+                        <h3 class="font-sans font-bold text-xl mb-5">Rian Firgiawan Gusti Ananda</h3>
+                        <div>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ad consequatur et atque praesentium sed, iusto nobis veritatis qui, eum necessitatibus, aspernatur nostrum voluptates modi esse deleniti voluptatibus placeat natus sequi rem maxime? A
+                            culpa facere autem ratione. Quod in ipsam at praesentium, et nihil dolorum, tempore officiis, culpa debitis exercitationem sequi. Molestiae laudantium neque unde sint explicabo nobis laboriosam nemo ratione, corporis deserunt,
+                            numquam possimus, pariatur mollitia voluptates repellendus similique minus non nulla. Et, distinctio aliquid! Illum voluptatem minima inventore aliquam laudantium consequatur praesentium corrupti fugit unde aperiam cupiditate
+                            architecto odio quia, tempore delectus ratione commodi quibusdam accusamus id.
+                        </div>
+                        <div class="mt-8 text-center md:text-left">
+                            <a class="font-sans py-3 px-8 mr-6 border-2 border-black bg-black hover:bg-transparent hover:text-black text-white">Download CV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full px-4 mx-auto h-full mt-32 mb-10 md:mb-0 md:mt-0">
+                    <h1 class="text-4xl my-8 md:text-center font-bold">Skills</h1>
+                    <div class="flex flex-wrap items-center justify-center">
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/html-5.png" class="w-9 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">html</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="img/tailwindcss.png" class="w-1/2 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">tailwind css</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://codeigniter.com/assets/images/ci-logo-big.png" class="w-6 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">codeigniter</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/css3.png" class="w-9 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">css</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/wired/32/000000/react.png" class="w-12 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">react js</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/windows/50/000000/node-js.png" class="w-9 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">node js</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/javascript.png" class="w-9 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">javascript</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/windows/128/000000/bootstrap.png" class="w-1/4 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">Bootstrap</h3>
+                        </div>
+                        <div class="w-1/3 text-center my-4">
+                            <img src="https://img.icons8.com/ios/50/000000/laravel.png" class="w-9 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">laravel</h3>
+                        </div>
+                        <div class="w-1/3 text-center mr-auto my-1">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/php-logo.png" class="w-9 h-auto mx-auto" />
+                            <h3 class="uppercase font-sans font-bold text-xl">php</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="flex justify-center my-4">
+                <h1 class="text-4xl font-bold ">Portfolio</h1>
+            </div>
+            <div class="container h-full md:h-full flex flex-row flex-wrap mx-auto justify-center items-center ">
+                <div class="max-w-sm md:max-w-md border-2 my-2 mx-3 md:relative img-project">
+                    <div class="w-1/3 h-56 py-8 md:py-40 px-48 image bg-cover object-cover " style="background-image: url( 'https://nishanth2305.netlify.app/assets/img/a.jpg'); ">
+                    </div>
+                    <div class="typograf-1 transition duration-500 absolute w-3/4 " style="top: 60%;left: 50%;transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); ">
+                        <h2 class="text-3xl font-bold " style="text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px
+                            #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc; ">Custom NER using spaCy</h2>
+                        <div class="mt-3 ">
+                            <a href=" " class="border-2 rounded-sm py-1 px-3 border-black hover:bg-black hover:text-white font-sans ">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm md:max-w-md border-2 my-2 mx-3 md:relative img-project ">
+                    <div class="w-1/3 h-56 py-8 md:py-40 px-48 image bg-cover object-cover " style="background-image: url( 'https://nishanth2305.netlify.app/assets/img/spacy.jpeg'); ">
+                    </div>
+                    <div class="typograf-1 transition duration-500 absolute w-3/4 " style="top: 60%;left: 50%;transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); ">
+                        <h2 class="text-3xl font-bold " style="text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px
+                            #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc; ">Custom NER using spaCy</h2>
+                        <div class="mt-3 ">
+                            <a href=" " class="border-2 rounded-sm py-1 px-3 border-black hover:bg-black hover:text-white font-sans ">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm md:max-w-md border-2 my-2 mx-3 md:relative img-project ">
+                    <div class="w-1/3 h-56 py-8 md:py-40 px-48 image bg-cover object-cover " style="background-image: url( 'https://nishanth2305.netlify.app/assets/img/spacy.jpeg'); ">
+                    </div>
+                    <div class="typograf-1 transition duration-500 absolute w-3/4 " style="top: 60%;left: 50%;transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); ">
+                        <h2 class="text-3xl font-bold " style="text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px
+                            #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc; ">Custom NER using spaCy</h2>
+                        <div class="mt-3 ">
+                            <a href=" " class="border-2 rounded-sm py-1 px-3 border-black hover:bg-black hover:text-white font-sans ">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm md:max-w-md border-2 my-2 mx-3 md:relative img-project ">
+                    <div class="w-1/3 h-56 py-8 md:py-40 px-48 image bg-cover object-cover " style="background-image: url( 'https://nishanth2305.netlify.app/assets/img/spacy.jpeg'); ">
+                    </div>
+                    <div class="typograf-1 transition duration-500 absolute w-3/4 " style="top: 60%;left: 50%;transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); ">
+                        <h2 class="text-3xl font-bold " style="text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px
+                            #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc; ">Custom NER using spaCy</h2>
+                        <div class="mt-3 ">
+                            <a href=" " class="border-2 rounded-sm py-1 px-3 border-black hover:bg-black hover:text-white font-sans ">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm md:max-w-md border-2 my-2 mx-3 md:relative img-project ">
+                    <div class="w-1/3 h-56 py-8 md:py-40 px-48 image bg-cover object-cover " style="background-image: url( 'https://nishanth2305.netlify.app/assets/img/a.jpg'); ">
+                    </div>
+                    <div class="typograf-1 transition duration-500 absolute w-3/4 " style="top: 60%;left: 50%;transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); ">
+                        <h2 class="text-3xl font-bold " style="text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px
+                            #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc; ">Custom NER using spaCy</h2>
+                        <div class="mt-3 ">
+                            <a href=" " class="border-2 rounded-sm py-1 px-3 border-black hover:bg-black hover:text-white font-sans ">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm md:max-w-md border-2 my-2 mx-3 md:relative img-project">
+                    <div class="w-1/3 h-56 py-8 md:py-40 px-48 image bg-cover object-cover " style="background-image: url( 'https://nishanth2305.netlify.app/assets/img/a.jpg'); ">
+                    </div>
+                    <div class="typograf-1 transition duration-500 absolute w-3/4 " style="top: 60%;left: 50%;transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); ">
+                        <h2 class="text-3xl font-bold " style="text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px
+                            #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc; ">Custom NER using spaCy</h2>
+                        <div class="mt-3 ">
+                            <a href=" " class="border-2 rounded-sm py-1 px-3 border-black hover:bg-black hover:text-white font-sans ">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="background-color: #e8e8e8; ">
+            <div class="container h-screen flex flex-col justify-center items-center space-y-6 ">
+                <h1 class="text-4xl my-8 font-bold ">Contact</h1>
+                <div class="flex flex-col md:flex-row justify-center items-center">
+                    <div class="md:w-10/12 w-full px-4 mx-auto">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.1556053771163!2d112.76867862916778!3d-7.396135569719677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e5ae068b1e09%3A0xacbaf7fb6ccf413a!2sPulungan%2C%20Sedati%2C%20Sidoarjo%20Regency%2C%20East%20Java%2061253!5e0!3m2!1sen!2sid!4v1605471080892!5m2!1sen!2sid "
+                            class="w-full h-64 " frameborder="0 " style="border:0; " allowfullscreen=" " aria-hidden="false " tabindex="0 "></iframe>
+
+                    </div>
+                    <div class="md:w-3/5 w-full text-left md:text-left px-16 my-10 ">
+                        <div>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span class="font-sans font-bold">Alamat</span>
+                            <p>
+                                Jl. Tritunggal No. - RT 24 / RW 11, Kel. Pepe, Kec. Sedati, Kota Sidoarjo, Jawa Timur. 61253
+                            </p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-address-book" aria-hidden="true"></i>
+                            <span class="font-sans font-bold">Nomor Telepon</span>
+                            <p>+62 89612954739</p>
+                        </div>
+
+                        <h5 class="mt-5 text-xl font-mono font-bold">Media Sosial</h5>
+
+                        <div>
+                            <i class="fab fa-facebook-square"></i>
+                            <span class="font-sans font-bold">Facebook</span>
+                            <p>Rianfga </p>
+                        </div>
 
 
-  	<div class="container mt-5">
-  		<div class="row mt-5">
-  			<div class="col-md-9">
-  				<section id="home">
-  					<h3 class="mb-4 mt-5"># <span class="border-bottom">Perkenalan</span></h3>
-  					<div class="text-center">
-  						<p class="ml-3 border shadow p-4 text-left rounded"><span><i>Nama Saya Riyan Dari Surabaya Saya Sekarang Masih Berumur 17 thn Dan Saya Sekolah di SMK Negeri 1 Surabaya. Di sekolah saya mengambil jurusan RPL atau Rekaya Perangkat Lunak</i>, saya sendiri masih belajar tahapan untuk bisa mendapatkan goal saya. Dan saya ini bergabung di komuintas cyber security sejak smp sampai saat ini, tidak bosan dengan beberapa pengalaman yang saya dapatkan namun ada rasa putus asa saya juga aktif di bidang programming tidak hanya itu saya juga mengikuti event it yang ada di surabaya, rumah saya ada di sidoarjo tepatnya di sedati deket dengan <span class="border-bottom">bandara internasional juanda</span> monggo kalo mau mampir hehe contact aja . sekian perkenalan dari saya mohon maaf kalo ada kata <b>terimakasih</b>.</span>
-  						</p>
-  					</div>
-  				</section>
-  			</div>
-  			<div class="col-md-12 mt-5">
-  				<section id="services">
-  					<h3 class="mb-5 mt-2"># <span class="border-bottom">Services</span></h3>
-						<div class="row ml-3 text-center">
-							<div class="col mt-3 ml-2">
-								<div class="card shadow" style="width: 18rem;">
-								  <div class="card-body">
-								    <h5 class="card-title">Membuat Web Portofolio Atau Web Commersil</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    
-								  </div>
-								</div>
-							</div>
+                        <div>
+                            <i class="fab fa-instagram-square" aria-hidden="true"></i>
+                            <span class="font-sans font-bold">Instagram</span>
+                            <p>@rianfga</p>
+                        </div>
 
-							<div class="col-md mt-3 ml-2">
-								<div class="card shadow" style="width: 18rem;">
-								  <div class="card-body">
-								    <h5 class="card-title">Membuat Tools Tracking Orang Dengan Memanfaatkan GPS</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    
-								  </div>
-								</div>
-							</div>
+                        <div>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span class="font-sans font-bold">Gmail</span>
+                            <p>ardirama26@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
 
-							<div class="col-md mt-3 ml-2">
-								<div class="card shadow" style="width: 18rem;">
-								  <div class="card-body">
-								    <h5 class="card-title">Belajar Web Developer FrontEnd Hingga BackEnd Bersama Saya</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    
-								  </div>
-								</div>
-							</div>
-
-						</div>
-  				</section>
-  			</div>
-  			<div class="col-md-12 mt-5 mb-5">	
-  				<section id="contact">	
-	  				<p><h3 class="mb-5"># <span class="border-bottom">Contact</span> </h3>
-	  					<div class="mt-3 text-center">	
-		  					<span class="ml-4 mr-5"><a href="https://wa.me/62089612954739"><i class="fab fa-whatsapp fa-4x text-success"></i></a></span>
-		  					<span class="mr-5"><a href="https://www.instagram.com/ryanfga_/"><i class="fab fa-instagram fa-4x text-danger"></i></a></span>
-		  					<span class="mr-5"><a href="https://www.facebook.com/mayong.mayong.7564"><i class="fab fa-facebook-square fa-4x text-primary"></i></a></span>
-		  					<span style="margin-right: -10px"><a href="https://www.youtube.com/channel/UC5mBwc9EFDSX9SJG2IcZcfQ"><i class="fab fa-youtube fa-4x text-danger"></i></a></span>
-	  					</div>
-	  				</p>
-  				</section>
-  			</div>
-  		</div>
-  	</div>
-
-  	<div class="row mt-5">
-  		<div class="col text-center text-white p-3" style="background-color: #000;">
-  			© 2019 RiyanDev CODE | All right reserved.
-  		</div>
-  	</div>
+        <section id="footer" class="bg-black">
+            <div class="container h-16 flex items-center">
+                <div class="w-full p-3 text-white">
+                    <div class="text-center font-sans font-medium text-1xl ">
+                        Copyright &copy; By Rian Made With
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script>
+        window.addEventListener("scroll", function() {
+            let scroll = document.documentElement.scrollTop;
+            if (scroll > 100) {
+                console.log(scroll)
+                document.getElementById("desk-nav").classList.remove('absolute');
+                document.getElementById("desk-nav").classList.add('fixed', 'shadow-lg', 'bg-white');
+            } else {
+                document.getElementById("desk-nav").classList.remove('fixed', 'shadow-lg', 'bg-white', 'transition');
+                document.getElementById("desk-nav").classList.add('absolute');
+            }
+
+        });
+
+
+        var route = document.getElementsByClassName("route");
+        for (var i = 0; i < route.length; i++) {
+            route[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace("active border-b-2 border-black", " ");
+                }
+                this.className += " active border-b-2 border-black";
+            });
+        }
+
+
+        function showMenu() {
+            document.getElementById("side-nav").setAttribute("style", "left: 0; transition: left 600ms");
+        }
+
+        function hideMenu() {
+            // if (document.getElementById("side-nav ").classList.contains('invisible')){
+            document.getElementById("side-nav").setAttribute("style", "left: -410px; transition: left 600ms");
+            // }
+        }
+    </script>
+</body>
+
 </html>
