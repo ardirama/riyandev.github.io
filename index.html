@@ -318,11 +318,13 @@
 
         function showMenu() {
             document.getElementById("side-nav").setAttribute("style", "left: 0; transition: left 600ms");
+            document.body.setAttribute('style' , 'overflow: hidden;');
         }
 
         function hideMenu() {
             // if (document.getElementById("side-nav ").classList.contains('invisible')){
             document.getElementById("side-nav").setAttribute("style", "left: -410px; transition: left 600ms");
+            document.body.setAttribute('style' , 'overflow: auto;');
             // }
         }
     </script>
