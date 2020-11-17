@@ -94,9 +94,6 @@
                         <a class="font-sans py-3 px-8 border-2 border-black hover:bg-black hover:text-white" data-aos="fade-up" data-aos-duration="1500">Explore Me</a>
                     </div>
                 </div>
-                <div class="hidden md:max-w-xs md:block md:mt-24">
-                    <img src="https://nishanth2305.netlify.app/assets/img/myslef.jpg" alt="" class="">
-                </div>
             </div>
         </section>
 
@@ -332,17 +329,17 @@
             document.getElementById("side-nav").setAttribute("style", "left: 0; transition: left 600ms; z-index: 99;");
             // document.getElementById("menu-mobile").setAttribute("data-aos", "zoom-out");
             // document.getElementById("menu-mobile").setAttribute("data-duration", "3000");
+            document.body.setAttribute('style', 'overflow: hidden;');
 
         }
 
         function hideMenu() {
             // if (document.getElementById("side-nav ").classList.contains('invisible')){
-            document.getElementById("side-nav").setAttribute("style", "left: -435px; transition: left 600ms");
-            // document.getElementById("menu-mobile").removeAttribute("data-aos");
+            document.getElementById("side-nav").setAttribute("style", "left: -410px; transition: left 600ms");
+            document.body.setAttribute('style', 'overflow: auto;');
             // }
         }
     </script>
 </body>
-
 
 </html>
