@@ -61,8 +61,8 @@
             </div>
         </nav>
 
-        <!-- Mobile Navigation -->
-        <nav class="flex flex-col flex-wrap shadow-md bg-black w-full h-full fixed md:invisible" style="left: -500px;" id="side-nav">
+        <!-- Mobile Navigation --
+        <nav class="flex flex-col flex-wrap shadow-md bg-black w-full h-full fixed md:invisible" style="left: -410px;" id="side-nav">
             <div class="flex flex-row py-4">
                 <button class="px-4 text-white focus:outline-none" onclick="hideMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -335,7 +335,7 @@
 
         function hideMenu() {
             // if (document.getElementById("side-nav ").classList.contains('invisible')){
-            document.getElementById("side-nav").setAttribute("style", "left: -410px; transition: left 600ms; z-index: auto;");
+            document.getElementById("side-nav").setAttribute("style", "left: -410px; transition: left 600ms; z-index: 99;");
             document.body.setAttribute('style', 'overflow: auto;');
             // }
         }
