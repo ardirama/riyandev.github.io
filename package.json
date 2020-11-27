@@ -1,5 +1,27 @@
 {
   "dependencies": {
     "tailwindcss": "^1.9.6"
-  }
+  },
+  "name": "ardirama.github.io",
+  "description": "I'm using tailwindcss to create my personal website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardirama/ardirama.github.io.git"
+  },
+  "keywords": [
+    "web",
+    "portfolio"
+  ],
+  "author": "rianfga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ardirama/ardirama.github.io/issues"
+  },
+  "homepage": "https://github.com/ardirama/ardirama.github.io#readme"
 }
